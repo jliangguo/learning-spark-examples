@@ -4,6 +4,7 @@ import org.apache.spark.SparkContext
 import play.api.libs.json._
 
 object LoadSaveJSONFile {
+  case class Person(name: String, lovesPandas: Boolean) // Must be a top-level class
   implicit val personReads: Format[Person] = Json.format[Person]
 
   def main(args: Array[String]): Unit = {
@@ -19,6 +20,4 @@ object LoadSaveJSONFile {
     result.filter(_.lovesPandas).map(Json.toJson(_)).saveAsTextFile("/tmp/ResultRDD.json")
   }
 }
-
-case class Person(name: String, lovesPandas: Boolean) // Must be a top-level class
 
