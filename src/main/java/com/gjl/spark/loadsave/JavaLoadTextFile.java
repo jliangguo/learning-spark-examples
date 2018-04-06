@@ -1,4 +1,4 @@
-package com.gjl.spark.loaddata;
+package com.gjl.spark.loadsave;
 
 import org.apache.spark.api.java.JavaRDD;
 import org.apache.spark.api.java.JavaSparkContext;
