@@ -15,7 +15,7 @@ object LoadSaveCSVFile {
       case x: Int if x > 0 => args(0)
       case _ => "local"
     }
-    val sc = new SparkContext(master, "LoadTextFile", System.getenv("SPARK_HOME"))
+    val sc = new SparkContext(master, "LoadSaveCSVFile", System.getenv("SPARK_HOME"))
     val input = sc.textFile("src/main/resources/favourite_animals.csv")
     val result = input.map { line =>
       val reader = new CSVReader(new StringReader(line))
