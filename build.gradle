@@ -30,6 +30,8 @@ dependencies {
 
         'com.typesafe.play:play-json_2.10:2.4.0-M1',
         'com.twitter.elephantbird:elephant-bird-core:4.15',
+
+        files('lib/hadoop-lzo-0.4.21-SNAPSHOT.jar'),
     )
     testCompile 'junit:junit:4.12'
 }

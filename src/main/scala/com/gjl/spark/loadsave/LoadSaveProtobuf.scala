@@ -7,6 +7,7 @@ import org.apache.hadoop.io.Text
 import org.apache.hadoop.mapreduce.Job
 import org.apache.spark.SparkContext
 
+// Using self-build hadoop-lzo jar
 object LoadSaveProtobuf {
   def main(args: Array[String]): Unit = {
     val master = args.length match {
