@@ -29,10 +29,14 @@ dependencies {
         'org.apache.spark:spark-mllib_2.10:2.2.0',
 
         'com.typesafe.play:play-json_2.10:2.4.0-M1',
-        'com.twitter.elephantbird:elephant-bird-core:4.15',
 
+        // self-built jars here
         files('lib/hadoop-lzo-0.4.21-SNAPSHOT.jar'),
     )
+    // exclude gplcompression, using self-built jar instead
+    compile ('com.twitter.elephantbird:elephant-bird-core:4.15') {
+        exclude group: 'com.hadoop.gplcompression'
+    }
     testCompile 'junit:junit:4.12'
 }
 
